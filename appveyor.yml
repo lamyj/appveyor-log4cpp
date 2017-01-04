@@ -23,7 +23,7 @@ before_build:
       cd "${env:BUILD_DIRECTORY}"
       ${generator} = "Visual Studio 14 2015"
       if (${env:PLATFORM} -eq "x64") { ${generator} = "${generator} Win64" }
-      cmake -G "${generator}" -DCMAKE_INSTALL_PREFIX="${env:INSTALL_DIRECTORY}" "C:\projects\${env:PROJECT}"
+      cmake -Wno-dev -G "${generator}" -DCMAKE_INSTALL_PREFIX="${env:INSTALL_DIRECTORY}" "C:\projects\${env:PROJECT}"
 
 build_script:
   - ps: |
